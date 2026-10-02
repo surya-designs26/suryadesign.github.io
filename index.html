@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Surya — Graphic & Apparel Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--n:#0B1220;--b:#155EEF;--lb:#EAF2FF;--bg:#F8FAFC;--fg:#101828;--mu:#667085;--ln:#E4E7EC;--sf:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0B1220;--fg:#F2F4F7;--mu:#98A2B3;--ln:#1D2939;--lb:#10233F;--sf:#101828;--b:#528BFF}}
+:root[data-theme=dark]{--bg:#0B1220;--fg:#F2F4F7;--mu:#98A2B3;--ln:#1D2939;--lb:#10233F;--sf:#101828;--b:#528BFF}
+*,*:before,*:after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}h1,h2,h3,p{margin:0}
+.w{max-width:1200px;margin:auto;padding:0 24px}
+.sec{padding:88px 0}
+.lab{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--b);font-weight:600}
+h1{font-size:clamp(38px,6.4vw,76px);line-height:1.04;letter-spacing:-.03em;font-weight:800}
+h2{font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-.02em;font-weight:700}
+h3{font-size:20px;font-weight:600;letter-spacing:-.01em}
+.mu{color:var(--mu)}.lead{font-size:clamp(17px,2vw,20px);color:var(--mu);max-width:620px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);border-bottom:1px solid var(--ln);backdrop-filter:blur(8px)}
+.nv{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;letter-spacing:-.02em}.logo i{color:var(--b);font-style:normal}
+nav.d{display:flex;gap:32px}nav a{font-size:14px;font-weight:500;color:var(--mu);padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
+nav a:hover{color:var(--fg)}nav a.on{color:var(--b);border-color:var(--b)}
+.bt{display:inline-flex;gap:8px;align-items:center;padding:12px 22px;border-radius:6px;font-weight:600;font-size:14px;border:1px solid var(--ln);transition:.2s;cursor:pointer;background:transparent;color:var(--fg);font-family:inherit}
+.bt.p{background:var(--b);border-color:var(--b);color:#fff}.bt.p:hover{filter:brightness(1.1)}.bt.o:hover{border-color:var(--b);color:var(--b)}
+.bt.s{padding:8px 16px}
+.hb{display:none;background:none;border:0;color:var(--fg);font-size:26px;cursor:pointer}
+.mm{position:fixed;inset:0;background:var(--bg);z-index:30;padding:24px;display:flex;flex-direction:column;gap:20px;animation:f .2s}
+.mm a{font-size:32px;font-weight:700;letter-spacing:-.02em}
+.hero{padding:72px 0 40px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.hero h1{margin:20px 0}.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hv{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:12px}
+.hv>:first-child{grid-row:span 2}
+.im{position:relative;width:100%;overflow:hidden;border-radius:6px;border:1px solid var(--ln);background:repeating-linear-gradient(45deg,var(--lb),var(--lb) 10px,var(--bg) 10px,var(--bg) 20px)}
+.im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s,opacity .3s}
+.im.ctn{background:var(--sf)}
+.ph{position:absolute;inset:0;display:grid;place-items:center;font:11px ui-monospace,monospace;color:var(--mu);text-align:center;padding:8px}
+.g2,.g3,.g4{display:grid;gap:24px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{display:block;border:1px solid var(--ln);border-radius:8px;background:var(--sf);overflow:hidden;animation:f .4s}
+.card .im{border:0;border-radius:0;border-bottom:1px solid var(--ln)}
+.card:hover .im img{transform:scale(1.03)}
+.card .bar{height:2px;width:0;background:var(--b);transition:width .35s}.card:hover .bar{width:100%}
+.cb{padding:20px}.cb .tx{transition:transform .25s}.card:hover .tx{transform:translateX(3px)}
+.cm{display:flex;justify-content:space-between;font-size:12px;color:var(--mu);margin-bottom:8px}.cm b{color:var(--b)}
+.ar{display:inline-block;transition:transform .25s;color:var(--b)}.card:hover .ar,.lk:hover .ar{transform:translateX(5px)}
+.lk{font-weight:600;color:var(--b);font-size:14px}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}.sh p{margin-top:12px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tb{padding:8px 16px;border-radius:999px;border:1px solid var(--ln);background:transparent;color:var(--mu);font:600 12px Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:.2s}
+.tb:hover{border-color:var(--b);color:var(--b)}.tb.on{background:var(--b);border-color:var(--b);color:#fff}
+.pr{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:16px}
+.st{border-top:2px solid var(--ln);padding-top:14px;transition:.3s}.st:hover{border-color:var(--b)}
+.st b{display:block;color:var(--b);font-size:12px;font-variant-numeric:tabular-nums}.st span{font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}.chip{font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;background:var(--lb);color:var(--b);border-radius:4px;font-weight:600}
+.pnl{border:1px solid var(--ln);border-radius:8px;background:var(--sf);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.pnl svg{width:100%;height:auto;border-radius:6px;border:1px solid var(--ln);animation:f .35s;display:block}
+.sw{display:flex;gap:8px;margin:16px 0}.sw i{width:32px;height:32px;border-radius:50%;border:1px solid var(--ln)}
+.cs{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:48px 0;border-top:1px solid var(--ln)}
+.cs .num{color:var(--b);font-weight:700;font-size:14px}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:20px}.flow small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mu);margin-bottom:6px}
+.meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:28px;padding:20px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}.meta small{display:block;font-size:12px;color:var(--mu);text-transform:uppercase;letter-spacing:.08em}
+.tl{border-left:2px solid var(--ln);padding-left:32px;position:relative}.tl:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--b)}
+ul.hl{padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 32px;margin:24px 0}ul.hl li{padding-left:18px;position:relative}ul.hl li:before{content:"";position:absolute;left:0;top:11px;width:8px;height:2px;background:var(--b)}
+.tile{border:1px solid var(--ln);border-radius:8px;padding:24px;background:var(--sf);transition:.25s}.tile:hover{border-color:var(--b);transform:translateY(-2px)}
+.tile.big{background:var(--n);color:#fff;border-color:var(--n)}.tile.big p{color:#98A2B3}
+.mas{columns:3;column-gap:24px}.mas .card{break-inside:avoid;margin-bottom:24px}
+.ct a.r{display:flex;justify-content:space-between;padding:22px 0;border-top:1px solid var(--ln);font-size:clamp(18px,2.6vw,28px);font-weight:600;transition:.2s}.ct a.r:hover{color:var(--b);padding-left:8px}
+.ct a.r span{font-size:12px;color:var(--mu);text-transform:uppercase;letter-spacing:.08em;align-self:center}
+footer{border-top:1px solid var(--ln);padding:48px 0 32px;margin-top:40px}
+.fg{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}.fl{display:flex;gap:20px;flex-wrap:wrap;font-size:14px;color:var(--mu)}.fl a:hover{color:var(--b)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}.rv.in{opacity:1;transform:none}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.pg{animation:f .35s}
+a:focus-visible,button:focus-visible{outline:2px solid var(--b);outline-offset:3px}
+@media(max-width:900px){.hero,.pnl,.cs{grid-template-columns:1fr}.g3,.g4{grid-template-columns:1fr 1fr}.mas{columns:2}.flow{grid-template-columns:repeat(3,1fr)}.cs{gap:12px}}
+@media(max-width:720px){nav.d,.nv .bt{display:none}.hb{display:block}.sec{padding:56px 0}.g2,.g3,.g4,ul.hl{grid-template-columns:1fr}.mas{columns:1}.pr{grid-template-columns:1fr;gap:0}.st{border-top:0;border-left:2px solid var(--ln);padding:0 0 22px 16px}.st:hover{border-color:var(--b)}.flow{grid-template-columns:repeat(2,1fr)}.hero{padding-top:32px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style></head>
+<body><div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="./images-config.js"></script>
+<script>
+const h=React.createElement,{useState,useEffect,useRef}=React;
+/* ===== EDIT ME: site info & content ===== */
+const SITE={name:'Surya',role:'Graphic & Apparel Designer',email:'hello@example.com',linkedin:'https://linkedin.com/in/your-handle',behance:'https://behance.net/your-handle',phone:'+91 00000 00000',resume:'./assets/resume.pdf'};
+const P=[
+{id:'earthform',t:'Earthform',k:'textile',c:'Textile Collection',y:'2026',self:1,d:'A self-initiated collection of organic motifs, built into repeats and colourways.'},
+{id:'urban-geometry',t:'Urban Geometry',k:'textile',c:'Geometric Print Development',y:'2026',self:1,d:'Grid-based prints developed as repeats and tested at three scales.'},
+{id:'botanical-rhythm',t:'Botanical Rhythm',k:'textile',c:'Floral Repeat Pattern',y:'2025',self:1,d:'A hand-drawn floral turned into a half-drop repeat with four colourways.'},
+{id:'essential-form',t:'Essential Form',k:'apparel',c:'Apparel Design',y:'2025',self:1,d:'Everyday basics explored through silhouette, print placement and detail.'},
+{id:'ecommerce-apparel',t:'E-commerce Apparel',k:'ecommerce',c:'Product Visual Development',y:'2025',d:'Listing images edited, colour-matched and detailed for online marketplaces.'},
+{id:'visual-campaign',t:'Visual Campaign',k:'graphic',c:'Graphic Design',y:'2025',d:'Posters, banners and social creatives for promotions and workshops.'}];
+P.forEach((p,i)=>{p.n='0'+(i+1)});
+const GD=[['Workshop Poster','Posters','2025','3/4'],['Marketing Poster','Posters','2025','4/5'],['Sale Banner','Banners','2025','16/9'],['Social Media Set','Social Media','2025','1/1'],['Promo Creative','Marketing Creatives','2025','4/3'],['Campaign Visual','Campaign Visuals','2024','3/4']].map((g,i)=>({t:g[0],c:g[1],y:g[2],m:IMG.graphic[i],d:'Layout, type and colour built for quick reading on screen and in print.'}));
+const FILT=[['all','All'],['textile','Textile'],['apparel','Apparel'],['graphic','Graphic Design'],['ecommerce','E-commerce'],['personal','Personal']];
+const CW=[['Original',['#F3EDE2','#8A6A4F','#C9A66B']],['01 — Earth',['#E8DCC8','#7A4E2D','#B5713C']],['02 — Navy',['#DCE6F5','#0B1220','#155EEF']],['03 — Olive',['#E6E8D5','#5B6B2E','#A3A65A']],['04 — Mono',['#EDEDED','#1A1A1A','#8A8A8A']]];
+const RP=[['straight','Straight','Motifs sit in a plain grid, one directly beside and below the next.'],['half','Half-Drop','Every second column drops by half the repeat height, hiding the grid.'],['brick','Brick','Every second row shifts sideways by half the width, like brickwork.'],['mirror','Mirror','The motif is flipped across both axes to build symmetry.']];
+/* ======================================= */
+const IMG=window.IMAGES;
+const go=(p)=>'#/'+p;
+function useRoute(){const g=()=>location.hash.slice(2);const[r,s]=useState(g());useEffect(()=>{const f=()=>{s(g());scrollTo(0,0)};addEventListener('hashchange',f);return()=>removeEventListener('hashchange',f)},[]);return r}
+function Rv({children}){const r=useRef();useEffect(()=>{const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');o.disconnect()}}),{threshold:.08});o.observe(r.current);return()=>o.disconnect()},[]);return h('div',{ref:r,className:'rv'},children)}
+function Img({m,alt}){const[st,setSt]=useState(0);return h('div',{className:'im'+(m.fit==='contain'?' ctn':''),style:{aspectRatio:m.r}},st!==1&&h('span',{className:'ph'},m.label),st!==2&&h('img',{src:m.src,alt:alt||m.label,loading:'lazy',style:{objectFit:m.fit,objectPosition:m.pos,opacity:st===1?1:0},onLoad:()=>setSt(1),onError:()=>setSt(2)}))}
+function SH({lab,t,sub,link}){return h(Rv,null,h('div',{className:'sh'},h('div',null,lab&&h('div',{className:'lab'},lab),h('h2',{style:{marginTop:8}},t),sub&&h('p',{className:'mu'},sub)),link&&h('a',{className:'lk',href:link[0]},link[1]+' ',h('span',{className:'ar'},'→'))))}
+function Card({p,m}){const href=p.id?go('project/'+p.id):null;return h('a',{className:'card',href:href||'#/work'},h(Img,{m}),h('div',{className:'bar'}),h('div',{className:'cb'},h('div',{className:'cm'},h('span',null,(p.n?p.n+' — ':'')+p.c),h('b',null,p.y)),h('div',{className:'tx'},h('h3',null,p.t),h('p',{className:'mu',style:{margin:'8px 0 14px',fontSize:15}},p.d),p.self&&h('span',{className:'chip'},'Self-Initiated Concept Project')),h('div',{style:{marginTop:14},className:'lk'},'View Project ',h('span',{className:'ar'},'→'))))}
+const Grid=({items,cls='g3',ctx})=>h('div',{className:cls},items.map(p=>h(Card,{p,m:IMG.cards[ctx][p.id],key:p.t})));
+function Filter({v,set}){return h('div',{className:'tabs',role:'tablist'},FILT.map(f=>h('button',{key:f[0],role:'tab','aria-selected':v===f[0],className:'tb'+(v===f[0]?' on':''),onClick:()=>set(f[0])},f[1])))}
+function Process({steps}){return h(Rv,null,h('div',{className:'pr',style:{'--n':steps.length}},steps.map((s,i)=>h('div',{className:'st',key:s},h('b',null,String(i+1).padStart(2,'0')),h('span',null,s)))))}
+const Motif=({a,b})=>h('g',null,h('path',{d:'M0-22C14-14 14 10 0 22C-14 10-14-14 0-22Z',fill:a}),h('circle',{cx:7,cy:-8,r:5,fill:b}));
+function TileG({mode,pal,size=240}){const S=60,out=[];for(let r=-1;r<5;r++)for(let c=-1;c<5;c++){let x=c*S+S/2,y=r*S+S/2,fx=1,fy=1,ro=0;if(mode==='half')y+=(c%2)*S/2;if(mode==='brick')x+=(r%2)*S/2;if(mode==='mirror'){fx=c%2?-1:1;fy=r%2?-1:1;ro=35}out.push(h('g',{key:r+'_'+c,transform:`translate(${x} ${y}) scale(${fx} ${fy}) rotate(${ro})`},h(Motif,{a:pal[1],b:pal[2]})))}return h('g',null,h('rect',{width:size,height:size,fill:pal[0]}),out)}
+function Repeat(){const[m,setM]=useState('straight');const cur=RP.find(x=>x[0]===m);return h('div',null,h('div',{className:'tabs'},RP.map(x=>h('button',{key:x[0],className:'tb'+(m===x[0]?' on':''),onClick:()=>setM(x[0])},x[1]))),h('div',{className:'pnl'},h('svg',{key:m,viewBox:'0 0 240 240',role:'img','aria-label':cur[1]+' repeat preview'},h(TileG,{mode:m,pal:CW[1][1]})),h('div',null,h('div',{className:'lab'},'Repeat type'),h('h3',{style:{margin:'8px 0 12px',fontSize:28}},cur[1]+' repeat'),h('p',{className:'mu'},cur[2]))))}
+function Colourway(){const[i,setI]=useState(0);const[n,pal]=CW[i];return h('div',null,h('div',{className:'tabs'},CW.map((c,j)=>h('button',{key:c[0],className:'tb'+(i===j?' on':''),onClick:()=>setI(j)},c[0]))),h('div',{className:'pnl'},h('svg',{key:'a'+i,viewBox:'0 0 240 240',role:'img','aria-label':n+' pattern'},h(TileG,{mode:'half',pal})),h('div',null,h('svg',{key:'b'+i,viewBox:'0 0 240 230',style:{maxWidth:280,margin:'auto',border:0},role:'img','aria-label':n+' applied to a tee'},h('defs',null,h('clipPath',{id:'tee'},h('path',{d:'M80 30L100 22Q120 40 140 22L160 30L205 60L185 95L165 82L165 205L75 205L75 82L55 95L35 60Z'}))),h('g',{clipPath:'url(#tee)'},h(TileG,{mode:'half',pal}))),h('div',{className:'sw'},pal.map(c=>h('i',{key:c,style:{background:c},title:c}))),h('p',{className:'mu',style:{fontSize:14}},n+' — same repeat, new palette.'))))}
+const CASE=[['Concept','Organic forms, worn close to the body. One idea, kept simple.',2],['Research','Reference photos, leaf studies and fabric swatches.',3],['Moodboard','Palette and texture direction.',3],['Motif Development','Sketch, trace, simplify. Three motifs, one family.',3]];
+function Case({p}){const tx=p.k==='textile';const S=(n,t,body,c)=>h('section',{className:'cs',key:n},h(Rv,null,h('div',null,h('div',{className:'num'},String(n).padStart(2,'0')+' —'),h('h3',null,t))),h(Rv,null,body,c));
+const imgs=(k)=>{const a=IMG.projects[p.id].sections[k];return h('div',{className:a.length>2?'g3':'g2',style:{marginTop:16}},a.map((m,i)=>h(Img,{key:i,m})))};
+let secs;if(tx){secs=CASE.map((c,i)=>S(i+1,c[0],h('p',{className:'mu'},c[1]),imgs(c[0].toLowerCase().split(' ')[0],c[2])));
+const fl=['Motif','Pattern Tile','Seamless Repeat','Colourway','Fabric','Final Product'];
+secs.push(S(5,'Pattern Development',h('p',{className:'mu'},'From a single motif to a finished product.'),h('div',{className:'flow'},fl.map((f,i)=>h('div',{key:f},h('small',null,f),h(Img,{m:IMG.projects[p.id].sections.flow[i]}))))));
+secs.push(S(6,'Repeat Development',h('p',{className:'mu',style:{marginBottom:20}},'The same motif in four repeat structures.'),h(Repeat)));
+secs.push(S(7,'Colourways',h('p',{className:'mu',style:{marginBottom:20}},'One print, four palettes.'),h(Colourway)));
+secs.push(S(8,'Fabric Application',h('p',{className:'mu'},'Scale and drape tested on fabric mock-ups.'),imgs('fabric',2)));
+secs.push(S(9,'Apparel Application',h('p',{className:'mu'},'Placement on garments: all-over, panel and trim.'),imgs('apparel',2,'3/4')));
+secs.push(S(10,'Final Collection',h('p',{className:'mu'},'The collection presented together.'),imgs('final',3,'3/4')))}
+else secs=[['Brief','What the work needed to do.'],['Process','From first draft to final file.'],['Outcome','The finished, delivered work.']].map((c,i)=>S(i+1,c[0],h('p',{className:'mu'},c[1]),imgs(c[0].toLowerCase(),2)));
+const next=P[(P.indexOf(p)+1)%P.length];
+return h('div',{className:'w pg'},h('div',{style:{padding:'56px 0 0'}},h('a',{href:'#/work',className:'lk'},'← All work'),h('div',{className:'lab',style:{marginTop:32}},p.n+' — '+p.c),h('h1',{style:{margin:'12px 0 16px'}},p.t+(tx?' — Textile Collection':'')),h('p',{className:'lead'},p.d),h('div',{className:'meta'},[['Category',tx?'Textile Design':p.c],['Type',p.self?'Self-Initiated Concept Project':'Commercial Work'],['Year',p.y]].map(m=>h('div',{key:m[0]},h('small',null,m[0]),h('b',null,m[1])))),h('div',{style:{marginTop:32}},h(Img,{m:IMG.projects[p.id].cover}))),secs,h('div',{style:{borderTop:'1px solid var(--ln)',padding:'32px 0',textAlign:'right'}},h('a',{className:'lk',href:go('project/'+next.id)},'Next: '+next.t+' ',h('span',{className:'ar'},'→'))))}
+const TOOLS=[['Adobe Photoshop','Daily driver: retouching, colour and detail work.'],['Adobe Illustrator','Vector artwork, motifs and print layouts.']];
+const SK=[['Textile & Apparel',['Print Development','Pattern & Repeat','Colourways','Garment Visual Development']],['Graphic Design',['Poster Design','Banner Design','Marketing Creatives','Visual Communication']],['E-commerce',['Product Listing','Product Visuals','Colour Variations','Marketplace Design']],['Software',['Photoshop','Illustrator']]];
+const SkillGroup=({g})=>h('div',{className:'tile'},h('div',{className:'lab',style:{marginBottom:12}},g[0]),g[1].map(s=>h('p',{key:s,style:{padding:'6px 0',borderBottom:'1px solid var(--ln)',fontSize:15}},s)));
+function Page({r}){const[a,b]=r.split('/');const[f,setF]=useState('all');
+const items=P.filter(p=>f==='all'||p.k===f||(f==='personal'&&p.self));
+if(a==='project'){const p=P.find(x=>x.id===b);if(p)return h(Case,{p,key:b})}
+if(a==='work')return h('div',{className:'w sec pg'},h(SH,{lab:'Work',t:'Selected Work',sub:'A mix of apparel, textile, e-commerce and graphic design work.'}),h('div',{className:'tabs',style:{marginBottom:8}},[['textile','Textile & Apparel'],['graphic','Graphic Design'],['ecommerce','E-commerce Design']].map(x=>h('a',{key:x[0],className:'lk',style:{marginRight:20},href:go(x[0])},x[1]+' →'))),h(Filter,{v:f,set:setF}),items.length?h('div',{key:f},h(Grid,{items,ctx:'work'})):h('p',{className:'mu'},'Nothing here yet.'));
+if(a==='textile')return h('div',{className:'pg'},h('div',{className:'w sec'},h(SH,{lab:'Self-Initiated Concept Projects',t:'Textile & Apparel Design',sub:'Exploring print, pattern, colour and apparel through commercially focused design development.'}),h('div',{className:'chips'},['Print Development','Pattern & Repeat','Colourways','Fabric Application','Apparel Development','Textile Collections'].map(c=>h('span',{className:'chip',key:c},c))),h('div',{style:{marginTop:56}},h('div',{className:'lab',style:{marginBottom:20}},'Process'),h(Process,{steps:['Idea','Research','Motif','Repeat','Colour','Fabric','Final Application']})),h('div',{style:{marginTop:72}},h('h2',{style:{marginBottom:24}},'Repeat structures'),h(Repeat)),h('div',{style:{marginTop:72}},h('h2',{style:{marginBottom:24}},'Colourways'),h(Colourway)),h('div',{style:{marginTop:72}},h(Grid,{items:P.filter(p=>p.k==='textile'||p.k==='apparel'),ctx:'textile'}))));
+if(a==='graphic')return h('div',{className:'w sec pg'},h(SH,{lab:'Graphic Design',t:'Graphic Design',sub:'Posters, banners, social and campaign work from day-to-day commercial design.'}),h('div',{className:'chips',style:{marginBottom:32}},['Posters','Banners','Social Media','Marketing Creatives','Campaign Visuals'].map(c=>h('span',{className:'chip',key:c},c))),h('div',{className:'mas'},GD.map(g=>h(Card,{key:g.t,p:g,m:g.m}))));
+if(a==='ecommerce')return h('div',{className:'w sec pg'},h(SH,{lab:'Commercial work',t:'E-commerce Design',sub:'Real apparel listings, edited and refined for online marketplaces.'}),h('div',{className:'chips'},['Product Listing Design','Apparel Visual Development','Product Image Editing','Colour Variations','Garment Detailing','Marketplace Creatives','Product Presentation'].map(c=>h('span',{className:'chip',key:c},c))),h('div',{style:{margin:'56px 0'}},h(Process,{steps:['Product','Design Development','Image Editing','Colour / Detail Refinement','Final Listing']})),h('div',{className:'g4'},['Original product image','Edited image','Colour variation','Final marketplace listing'].map((t,i)=>h(Rv,{key:t},h('div',null,h(Img,{m:IMG.ecommerce[i]}),h('p',{style:{marginTop:10,fontSize:14,fontWeight:600}},String(i+1).padStart(2,'0')+' — '+t))))));
+if(a==='experience'||a==='resume'){return h('div',{className:'w sec pg'},h(SH,{lab:a==='resume'?'Resume':'Experience',t:a==='resume'?'Resume':'Experience',link:a==='resume'?null:[go('resume'),'View Resume']}),h('div',{className:'tl'},h('div',{className:'lab'},'Nov 2024 — Present'),h('h2',{style:{fontSize:32,margin:'8px 0 4px'}},'Graphic Designer'),h('p',{className:'mu'},'Tripr India'),h('ul',{className:'hl'},['Apparel-focused e-commerce design','Product listing image development','Product visual editing','Print and colour modifications','Garment detailing','Photoshop and Illustrator workflows','Marketplace visual development','Promotional creatives','Team coordination','Design workload management','Tripr Academy visual/design support'].map(x=>h('li',{key:x},x)))),h('div',{style:{margin:'64px 0 24px'}},h('h2',null,'What I work on')),h('div',{className:'g3'},['Apparel','E-commerce','Graphic Design','Print','Colour','Product Visuals'].map((t,i)=>h('div',{className:'tile'+(i===0?' big':''),key:t},h('div',{className:'lab',style:{color:'inherit',opacity:.7}},String(i+1).padStart(2,'0')),h('h3',{style:{marginTop:10}},t)))),a==='resume'&&h('div',{style:{marginTop:64}},h('div',{className:'g2'},h('div',{className:'tile'},h('div',{className:'lab'},'Education'),h('p',{style:{marginTop:8}},'Your degree — Institution, Year')),h('div',{className:'tile'},h('div',{className:'lab'},'Tools'),h('p',{style:{marginTop:8}},'Photoshop, Illustrator, DaVinci Resolve')),h('div',{className:'tile'},h('div',{className:'lab'},'Skills'),h('p',{style:{marginTop:8}},'Print, colour, pattern & repeat, e-commerce visuals')),h('div',{className:'tile'},h('div',{className:'lab'},'Contact'),h('p',{style:{marginTop:8}},SITE.email))),h('div',{className:'row'},h('a',{className:'bt p',href:SITE.resume,download:true},'Download Resume ↓'))))}
+if(a==='about')return h('div',{className:'w sec pg'},h(SH,{lab:'About',t:'About me'}),h('p',{className:'lead',style:{color:'var(--fg)',fontSize:'clamp(20px,2.6vw,28px)',maxWidth:800}},'Graphic & Apparel Designer with 2+ years of experience working across e-commerce, apparel visuals, graphic design and product presentation.'),h('div',{style:{margin:'64px 0 24px'}},h('h2',null,'Design interests'),h('div',{className:'chips',style:{marginTop:20}},['Textile Design','Print Development','Pattern Design','Apparel Design','Colour Development','E-commerce Design','Visual Communication'].map(c=>h('span',{className:'chip',key:c},c)))),h('h2',{style:{margin:'64px 0 24px'}},'Tools'),h('div',{className:'g2'},TOOLS.map((t,i)=>h('div',{className:'tile big',key:t[0]},h('h3',null,t[0]),h('p',{style:{marginTop:8}},t[1])))),h('p',{className:'mu',style:{marginTop:16}},'Also: DaVinci Resolve for video edits.'),h('h2',{style:{margin:'64px 0 24px'}},'Skills'),h('div',{className:'g4'},SK.map(g=>h(SkillGroup,{g,key:g[0]}))));
+if(a==='contact')return h('div',{className:'w sec pg ct'},h('div',{className:'lab'},'Contact'),h('h1',{style:{margin:'12px 0 48px'}},'Let’s create something.'),[['Email',SITE.email,'mailto:'+SITE.email],['LinkedIn','linkedin.com/in/your-handle',SITE.linkedin],['Behance','behance.net/your-handle',SITE.behance],['Phone / WhatsApp',SITE.phone,'tel:'+SITE.phone.replace(/\s/g,'')]].map(x=>h('a',{className:'r',key:x[0],href:x[2]},h('span',null,x[0]),x[1])),h('div',{className:'row'},h('a',{className:'bt p',href:'mailto:'+SITE.email},'Say hello →')));
+/* HOME */
+return h('div',{className:'pg'},h('div',{className:'w'},h('div',{className:'hero'},h('div',null,h('div',{className:'lab'},'Graphic Designer • Apparel • Textile'),h('h1',null,'Designing visuals that connect product, pattern and people.'),h('p',{className:'lead'},SITE.name+' — '+SITE.role+' focused on visual development, e-commerce, print, colour and emerging textile design.'),h('div',{className:'row'},h('a',{className:'bt p',href:go('work')},'View Selected Work →'),h('a',{className:'bt o',href:go('resume')},'View Resume'))),h('div',{className:'hv'},h(Img,{m:IMG.home.hero.main}),h(Img,{m:IMG.home.hero.secondary}),h(Img,{m:IMG.home.hero.detail})))),h('section',{className:'w sec'},h(SH,{lab:'Work',t:'Selected Work',sub:'A mix of apparel, textile, e-commerce and graphic design work.',link:[go('work'),'All work']}),h(Grid,{items:P,cls:'g2',ctx:'home'})),h('section',{className:'w sec',style:{paddingTop:0}},h(SH,{lab:'Direction',t:'From graphic design to textile.',sub:'Two years of commercial apparel work is the base I’m building textile skills on.'}),h(Process,{steps:['Graphic Design','Apparel / E-commerce','Print / Colour / Pattern','Textile Design']}),h('div',{className:'g3',style:{marginTop:48}},[['textile','Textile & Apparel Design','Print, repeats and colourways.'],['graphic','Graphic Design','Posters, banners and campaigns.'],['ecommerce','E-commerce Design','Real listings, edited and refined.']].map(x=>h('a',{key:x[0],href:go(x[0]),className:'tile lk',style:{display:'block',color:'var(--fg)'}},h('h3',null,x[1]),h('p',{className:'mu',style:{margin:'8px 0 12px',fontWeight:400}},x[2]),h('span',{className:'lk'},'Explore ',h('span',{className:'ar'},'→')))))))}
+function App(){const r=useRoute();const[o,setO]=useState(false);useEffect(()=>setO(false),[r]);const a=r.split('/')[0];
+const N=[['','Home'],['work','Work'],['experience','Experience'],['about','About'],['contact','Contact']];
+const on=k=>k===a||(k==='work'&&['project','textile','graphic','ecommerce'].includes(a));
+return h(React.Fragment,null,h('header',null,h('div',{className:'w nv'},h('a',{href:'#/',className:'logo'},SITE.name,h('i',null,'.')),h('nav',{className:'d','aria-label':'Main'},N.map(n=>h('a',{key:n[0],href:'#/'+n[0],className:on(n[0])?'on':'','aria-current':on(n[0])?'page':undefined},n[1]))),h('a',{className:'bt p s',href:go('resume')},'View Resume'),h('button',{className:'hb','aria-label':'Open menu',onClick:()=>setO(true)},'☰'))),
+o&&h('div',{className:'mm'},h('button',{className:'hb',style:{display:'block',alignSelf:'flex-end'},'aria-label':'Close menu',onClick:()=>setO(false)},'✕'),N.map(n=>h('a',{key:n[0],href:'#/'+n[0]},n[1])),h('a',{href:go('resume'),style:{color:'var(--b)'}},'View Resume')),
+h('main',null,h(Page,{r})),
+h('footer',null,h('div',{className:'w fg'},h('div',null,h('div',{className:'logo'},SITE.name.toUpperCase()),h('p',{className:'mu',style:{fontSize:14}},SITE.role)),h('div',{className:'fl'},['work','experience','about','contact','resume'].map(k=>h('a',{key:k,href:go(k)},k[0].toUpperCase()+k.slice(1))),h('a',{href:SITE.behance},'Behance'),h('a',{href:SITE.linkedin},'LinkedIn'))),h('div',{className:'w mu',style:{fontSize:12,marginTop:32}},'© 2026 '+SITE.name+'. All rights reserved.')))}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script></body></html>
